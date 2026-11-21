@@ -1,7 +1,7 @@
 {
   "name": "Farm & Table – Hninn",
   "short_name": "Farm & Table",
-  "description": "Daily goals, garden, fishing, recipes, restaurant, shopping lists and finances.",
+  "description": "Farmstead and restaurant management driven by goals. A game day only ends after explicit confirmation, and unfinished goals carry forward.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f8f6ef",
