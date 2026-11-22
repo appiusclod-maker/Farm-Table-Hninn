@@ -753,7 +753,7 @@ input:not([type=checkbox]),select,textarea{background:#fffdf9!important;border:1
 @media(max-width:620px){.ft159-project-overview>div{padding:12px 6px}.ft159-project-overview b{font-size:20px}.ft159-project-dates,.ft159-step-form{grid-template-columns:1fr}.ft159-step-form .field:nth-of-type(3),.ft159-step-form .btn-row{grid-column:auto}.ft159-project-heading{padding:12px}.ft159-pct{font-size:17px}.ft159-flag{min-width:61px}.ft159-finish-box{padding:15px;max-height:92dvh}}
 
 
-/* v1.6.0 - an explicitly confirmed game day and persistent carried goals */
+/* v1.6.1 - an explicitly confirmed game day and persistent carried goals */
 .ft160-day-banner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin:14px 0;padding:16px 18px;border:1px solid #cadfc4;border-radius:18px;background:linear-gradient(135deg,#f1fae8,#f9fff2);box-shadow:0 5px 18px #64876515}
 .ft160-day-banner.late{background:linear-gradient(130deg,#fff4d9,#fffaf1);border-color:#e7ca8c}
 .ft160-day-banner.future{background:linear-gradient(130deg,#eef4fb,#fafcff);border-color:#c6d8ea}
@@ -762,7 +762,7 @@ input:not([type=checkbox]),select,textarea{background:#fffdf9!important;border:1
 .ft160-day-banner small{display:block;margin-top:5px;color:#69776a;line-height:1.5}
 .ft11-date.ft160-open-day{outline:2px solid #d5a34c;outline-offset:-3px}
 @media(max-width:630px){.ft160-day-banner{padding:12px}.ft160-day-banner .btn{width:100%}}
-</style><title>Farm & Table 1.6.0 — English Edition</title></head><body><div class="app"><aside class="sidebar"><div class="brand"><div class="brand-mark">🌾</div><div><strong>Farm & Table</strong><span>La tua fattoria, la tua vita</span></div></div><nav id="sideNav" class="nav" aria-label="Menu principale"></nav><div class="aside-note"><strong>🌸 Ogni giorno conta.</strong>Le tue scelte nella vita reale fanno crescere la fattoria. Nessuna pubblicità, nessun account, dati locali.</div></aside><main class="app-main" id="content" aria-live="polite"></main><nav id="mobileNav" class="mobile-nav" aria-label="Menu mobile"></nav></div>
+</style><title>Farm & Table 1.6.1 — English Edition</title></head><body><div class="app"><aside class="sidebar"><div class="brand"><div class="brand-mark">🌾</div><div><strong>Farm & Table</strong><span>La tua fattoria, la tua vita</span></div></div><nav id="sideNav" class="nav" aria-label="Menu principale"></nav><div class="aside-note"><strong>🌸 Ogni giorno conta.</strong>Le tue scelte nella vita reale fanno crescere la fattoria. Nessuna pubblicità, nessun account, dati locali.</div></aside><main class="app-main" id="content" aria-live="polite"></main><nav id="mobileNav" class="mobile-nav" aria-label="Menu mobile"></nav></div>
 <div id="ft1-radio-dock" class="ft1-radio-dock" data-playlist-id="">
   <button type="button" class="ft1-radio-bubble" data-act="radio-toggle" aria-controls="ft1-radio-panel" aria-expanded="false" title="Apri la radio del ristorante"><span class="ft1-radio-bubble-icon">♫</span><span>Radio</span></button>
   <section id="ft1-radio-panel" class="ft1-radio-panel" aria-hidden="true" aria-label="Radio del ristorante">
@@ -1970,7 +1970,7 @@ function importReginaData(raw){const all=reginaProjectCandidates(raw),converted=
 function importReginaFromSameOrigin(){let candidates=[];try{for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(!key||!/regina/i.test(key))continue;const text=localStorage.getItem(key);if(!text||text.length>9000000)continue;try{const obj=JSON.parse(text);if(reginaProjectCandidates(obj).some(p=>convertReginaProject(p)))candidates.push({key,obj});}catch(e){/* Ignore unrelated saves. */}}}catch(e){return toast('Browser storage cannot be read here. Use a JSON backup instead.');}if(!candidates.length){ui.reginaImportFeedback='No REGINA big projects were found on this website. Use the JSON import above; apps on different websites cannot share local storage.';render(true);toast(ui.reginaImportFeedback);return;}candidates.sort((a,b)=>reginaProjectCandidates(b.obj).length-reginaProjectCandidates(a.obj).length);try{importReginaData(candidates[0].obj)}catch(e){ui.reginaImportFeedback=e.message||'Unable to read REGINA projects.';render(true);toast(ui.reginaImportFeedback)}}
 function exportProjectFile(){const data={format:'farm-table-big-projects-v1',exportedAt:new Date().toISOString(),projects:state.projects.map(p=>({...p}))};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`Farm-Table-Projects-${today()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1500)}
 
-function htmlHead(title,subtitle){return `<div class="topbar"><div><div class="eyebrow">Farm & Table · v1.6.0</div><h1 class="page-title">${title}</h1>${subtitle?`<p class="subtitle">${subtitle}</p>`:''}</div><span class="pill">🌤️ ${esc(new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short'}))}</span></div>`}
+function htmlHead(title,subtitle){return `<div class="topbar"><div><div class="eyebrow">Farm & Table · v1.6.1</div><h1 class="page-title">${title}</h1>${subtitle?`<p class="subtitle">${subtitle}</p>`:''}</div><span class="pill">🌤️ ${esc(new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short'}))}</span></div>`}
 function progress(n){return `<div class="progress"><span style="width:${cap(n,0,10)*10}%"></span></div>`}
 function catTag(k){return `<span class="tag">${CAT[k].icon} ${CAT[k].short}</span>`}
 function menuBtn(v,label,icon){return `<button class="nav-btn ${ui.view===v?'active':''}" data-go="${v}"><span>${icon}</span>${label}</button>`}
@@ -2667,7 +2667,7 @@ function autoDailyEvent(d,leisure){
  if(!options.length)return null;
  const rand=dailyRandomSeed(d+':eventi:1.4');
  const picked=options[Math.floor(rand()*options.length)];
- const cuisine= AUTO_CUISINES[preference];const title=(cuisine&&['Festa/sagra','Lezioni','Fiera'].includes(picked.type))?`${cuisine.name} Flavours at the Farm`:AUTO_EVENT_TITLES[picked.type]||picked.type;
+ const cuisine= AUTO_CUISINES[autoCuisineFor(d)];const title=(cuisine&&['Festa/sagra','Lezioni','Fiera'].includes(picked.type))?`${cuisine.name} Flavours at the Farm`:AUTO_EVENT_TITLES[picked.type]||picked.type;
  return {type:picked.type,name:title,venueId:picked.venue.id,venueName:restName(picked.venue),image:null,auto:true};
 }
 
@@ -3085,7 +3085,7 @@ case 'agenda-toggle':{const d=el.dataset.date||gameDate();const t=state.tasks.fi
   state.subtaskStates??={};state.subtaskStates[d]??={};state.subtaskStates[d][id]??={};
   for(const sub of(t.subtasks||[]))state.subtaskStates[d][id][sub.id]=next==='done';
  }
- applyProjectStepFromGoal(t,next);save();render();return;}
+ applyProjectStepFromGoal(t,next);save();render(true);return;}
 case 'flex-toggle':{const t=state.tasks.find(x=>x.id===id);if(!t||!isFlexibleGoal(t))return;
  if(gameDayClosed())return toast('This day is already closed.');
  const next=taskStatus(id,gameDate())==='done'?'none':'done';updateFlexibleGoal(t,next);save();render(true);return;}
@@ -3262,7 +3262,7 @@ function changeHandler(e){const el=e.target;const d=gameDate();
    const progress=subtaskCompletion(task,gameDate());
    state.goalCompletions??={};state.goalCompletions[goalId]={status:progress.done===progress.total?'done':progress.done?'partial':'none',date:gameDate()};
   }else{state.taskStates[day]??={};state.taskStates[day][goalId]='none';}
-  save();render();return;
+  save();render(true);return;
  }
  if(el.id==='ft17-photo-picker'){
   const file=el.files?.[0],targetId=ui.photoTargetId,targetKind=ui.photoTargetKind;el.value='';ui.photoTargetId=null;ui.photoTargetKind=null;

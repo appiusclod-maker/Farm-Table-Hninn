@@ -5,3 +5,5 @@ NEW: The game's current day is kept in the saved state. The passage of time on t
 Upload all six files from this archive to the ROOT of your existing GitHub Pages repository appiusclod-maker/Farm-Table-Hninn, replacing the prior version. Do not upload the ZIP itself and do not put the files in a subfolder. iPhone: keep the existing Home Screen shortcut; reopen it after upload to let the service worker update. Do NOT delete/reinstall the app to update: its locally stored data may be lost.
 
 IMPORTANT: Export a JSON backup from Settings BEFORE overwriting the previous version and periodically thereafter. The local data storage key has NOT changed. This app does not synchronize private data across phones.
+
+1.6.1: Fixed finish-day event preference error; goal status and checklist retain scroll position.
